@@ -1,82 +1,91 @@
-# Project: Object Detection and Depth Estimation
-
-## Overview
-
-This project utilizes NanoDet for object detection and Lotus/ZoeDepth for depth estimation. It is designed to run on Python with `venv` or Conda for managing dependencies.
+# Project Setup Guide
 
 ## Prerequisites
-
-- Python 3.8 - 3.10 (Recommended)
+Before starting, ensure you have the following installed:
+- Python (>=3.8, preferably 3.10 for compatibility)
 - Git
-- A dedicated GPU (for faster processing, but CPU is supported)
-- **(Optional)** Conda for environment management
+- Miniconda (optional, if using Conda environments)
+- pip
 
-## Installation
-
-### **1️⃣ Clone the Repository**
-
-```bash
-git clone https://github.com/your-repo/project-name.git
-cd project-name
+## Cloning the Repository
+```sh
+git clone https://github.com/HEILLER4/caps
+cd https://github.com/HEILLER4/caps
 ```
 
-### **2️⃣ Create and Activate Virtual Environment**
-
-#### **Using ****************************`venv`**************************** (Recommended)**
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate    # On Windows
+## Creating Virtual Environments
+Each component (NanoDet, Lotus, ZoeDepth) will have its own virtual environment.
+## Nanodet, Lotus and ZoeDepth repository
+```git
+https://github.com/EnVision-Research/Lotus
+https://github.com/RangiLyu/nanodet
+https://github.com/isl-org/ZoeDepth
 ```
 
-#### **Using Conda (Alternative)**
-
-```bash
-conda create --name project-env python=3.10 -y
-conda activate project-env
+### 1. Setting up NanoDet Environment
+```sh
+python -m venv venv_nanodet
+source venv_nanodet/bin/activate  # On Windows, use `venv_nanodet\Scripts\activate`
+```
+#### Install Dependencies
+```sh
+pip install -r nanodet/requirements.txt
 ```
 
-### **3️⃣ Install Dependencies**
+### 2. Setting up Lotus Environment
+```sh
+python -m venv venv_lotus
+source venv_lotus/bin/activate
+```
+#### Install Dependencies
+```sh
+pip install -r lotus/requirements.txt
+```
 
-```bash
-pip install --upgrade pip
+### 3. Setting up ZoeDepth Environment
+```sh
+python -m venv venv_zoedepth
+source venv_zoedepth/bin/activate
+```
+#### Install Dependencies
+```sh
+pip install -r ZoeDepth/requirements.txt
+```
+
+## Installing Common Dependencies
+```sh
 pip install -r requirements.txt
 ```
 
-### **4️⃣ Install Torch Manually (If Needed)**
+## Running the Project
+Activate the appropriate environment before running any module.
 
-Check [PyTorch Official Site](https://pytorch.org/get-started/locally/) for the best installation for your system.
-For example:
-
-```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118  # GPU (CUDA 11.8)
-pip install torch torchvision torchaudio  # CPU only
+For NanoDet:
+```sh
+source venv_nanodet/bin/activate
+python scripts/nanodet.py
 ```
 
-## Running the Project
+For Lotus:
+```sh
+source venv_lotus/bin/activate
+python scripts/lotus.py
+```
 
-```bash
-python main.py
+For ZoeDepth:
+```sh
+source venv_zoedepth/bin/activate
+python scripts/zoedepth.py
 ```
 
 ## Troubleshooting
+- **Dependency Conflicts**: If you encounter issues, consider creating a new virtual environment and reinstalling dependencies.
+- **Torch Compatibility**: Ensure all libraries use the same version of PyTorch by specifying the compatible version in `requirements.txt`.
 
-- **If ********\`\`******** versions conflict:** Install compatible versions manually.
-- **If OpenMP error (**\`\`\*\* conflict):\*\* Set environment variable:
-  ```bash
-  set KMP_DUPLICATE_LIB_OK=TRUE  # Windows
-  export KMP_DUPLICATE_LIB_OK=TRUE  # Linux/macOS
-  ```
-- **For missing dependencies:** Reinstall:
-  ```bash
-  pip install -r requirements.txt --force-reinstall
-  ```
+## Additional Notes
+- Edit `requirements.txt` as needed for updated dependencies.
+- Use `deactivate` to exit a virtual environment.
+- If using Conda, replace `python -m venv` with `conda create --name <env_name> python=3.x` and activate using `conda activate <env_name>`.
 
-## Notes
-
-- If using a Raspberry Pi, ensure dependencies are compatible with ARM.
-- GPU is recommended for real-time processing.
-
----
+Happy coding! 🚀
 
