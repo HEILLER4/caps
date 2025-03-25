@@ -80,3 +80,7 @@ python main.py
 
 ---
 
+### **Contact & Support**
+
+For issues, create a GitHub issue or reach out to `your-email@example.com`. 🚀
+
