@@ -86,6 +86,7 @@ python scripts/zoedepth.py
 - Edit `requirements.txt` as needed for updated dependencies.
 - Use `deactivate` to exit a virtual environment.
 - If using Conda, replace `python -m venv` with `conda create --name <env_name> python=3.x` and activate using `conda activate <env_name>`.
+- for models of nanodet, lotus and zoedepth, please go to their site and select the appropriate version of model.
 
 Happy coding! 🚀
 
