@@ -1,5 +1,5 @@
 from scripts.nanodet import NanoDet
-#from scripts.zoedepth import ZoeDepth
+from scripts.zoe import ZoeDepth
 from scripts.lotus import LotusDepth
 from scripts.speech import SpeechHandler
 from scripts.ocr import OCRProcessor

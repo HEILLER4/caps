@@ -6,6 +6,8 @@ nanodet_venv
 nanodet
 Lotus
 Lotus_venv
+zoe_venv
+ZoeDepth
 # Ignore compiled Python files
 __pycache__/
 *.pyc

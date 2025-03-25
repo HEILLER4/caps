@@ -1,6 +1,6 @@
 import torch
-from nanodet.model.arch import build_model
-from nanodet.util import load_model_weight
+from nanodet.nanodet.model.arch import build_model
+from nanodet.nanodet.util import load_model_weight
 
 class NanoDet:
     def __init__(self, model_path):
